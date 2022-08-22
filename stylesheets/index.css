@@ -7,26 +7,28 @@ body, html {
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: rgb(10, 10, 10);
+    background-color: #1C3879;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 h1 {
-    font-size: 24pt;
+    font-size: 42pt;
     color: #fff;
     font-weight: bolder;
     user-select: none;
     margin: 0;
     padding: 0;
+    position: absolute;
+    top: calc(50% / 2);
 }
 
 #to-graph {
     cursor: pointer;
     width: 200px;
     height: 50px;
-    background-color: #fff;
+    background-color: #EAE3D2;
     border-radius: 8px;
     display: flex;
     flex-direction: row;
@@ -35,16 +37,37 @@ h1 {
     text-decoration: none;
     color: rgb(10, 10, 10);
     font-weight: bolder;
-    box-shadow: 0 0 16px 0 rgba(255, 255, 255, 0.5);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
-    transition: box-shadow 0.2s;
+    transition: all .5s ease;
+    background-color : transparent;
+    color: #fff;
+    border: 3px solid white;
 }
 
 #to-graph:hover {
-    transition: box-shadow 0.2s;
-    box-shadow: 0 0 32px 0 rgba(255, 255, 255, 0.5) !important;
+    color: #001F3F;
+    background-color: #fff;
+}
+
+/* Change h1 font size depending on screen size */
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 32pt;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    h1 {
+        font-size: 24pt;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    h1 {
+        font-size: 16pt;
+    }
 }
