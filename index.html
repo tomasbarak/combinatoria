@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Combinatoria</title>
+    
+    <title>Inicio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,61 +16,100 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/octicons/8.5.0/build.css" rel="stylesheet">
 
     <link rel="stylesheet" href="stylesheets/index.css">
+    <link rel="stylesheet" href="stylesheets/dice.css">
 
-    <script src="scripts/setupMenu.js" defer></script>
-    <script src="scripts/setupWindow.js" defer></script>
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="scripts/diceAnimations.js"></script>
 </head>
+
 <body>
-    <nav id="top-nav-bar">
-        <div class="top-nav-bar-item" id="nav-item-0">
-            <h1 class="nav-bar-item-title" id="nav-title-0">Archivo</h1>
-            <ul class="nav-bar-item-option-list invisible" id="nav-item-list-0">
-                <li class="item-option-list-item">Nuevo</li>
-                <li class="item-option-list-item">Abrir</li>
-                <li class="item-option-list-item">Guardar</li>
-                <li class="item-option-list-item">Guardar como</li>
-                <li class="item-option-list-item">Captura de pantalla</li>
-                <li class="item-option-list-item">Exportar a PDF</li>
-                <li class="item-option-list-item">Cerrar</li>
-                <li class="item-option-list-item">Salir</li>
-            </ul>
-        </div>
-        <div class="top-nav-bar-item" id="nav-item-1">
-            <h1 class="nav-bar-item-title" id="nav-title-1">Permutaciones</h1>
-            <ul class="nav-bar-item-option-list" id="nav-item-list-1">
-                <li class="item-option-list-item">Sin repetición</li>
-                <li class="item-option-list-item">Con repetición</li>
-                <li class="item-option-list-item">Circulares</li>
-            </ul>
-        </div>
-        <div class="top-nav-bar-item" id="nav-item-2">
-            <h1 class="nav-bar-item-title" id="nav-title-2">Variaciones</h1>
-            <ul class="nav-bar-item-option-list" id="nav-item-list-2">
-                <li class="item-option-list-item">Sin repetición</li>
-                <li class="item-option-list-item">Con repetición</li>
-            </ul>
-        </div>
-        <div class="top-nav-bar-item" id="nav-item-3">
-            <h1 class="nav-bar-item-title" id="nav-title-3">Combinaciones</h1>
-            <ul class="nav-bar-item-option-list" id="nav-item-list-3">
-                <li class="item-option-list-item">Sin repetición</li>
-                <li class="item-option-list-item">Con repetición</li>
-            </ul>
-        </div>
-        <div class="top-nav-bar-item" id="nav-item-4">
-            <h1 class="nav-bar-item-title" id="nav-title-4">Mostrar objetos</h1>
-            <ul class="nav-bar-item-option-list" id="nav-item-list-4">
-                <li class="item-option-list-item">Letras</li>
-                <li class="item-option-list-item">Numeros</li>
-                <li class="item-option-list-item">Figuras</li>
-                <li class="item-option-list-item">No mostrar</li>
-            </ul>
-        </div>
-        <div class="top-nav-bar-item" id="nav-item-5">
-            <h1 class="nav-bar-item-title" id="nav-title-6">Ayuda</h1>
-        </div>
-    </nav>
-    <section id="content"></section>
-    <footer id="bottom-footer"></footer>
+    <svg id="dice-container" version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="100" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        viewBox="0 0 700 200" style="enable-background:new 0 0 350 100;" xml:space="preserve">
+
+        <rect class="dice-rect" id="dice1" fill="url(#side)" rx="5" />
+        <rect class="dice-rect" id="dice2" fill="url(#side)" rx="5" />
+        <rect class="dice-rect" id="dice3" fill="url(#side)" rx="5" />
+        <rect class="dice-rect" id="dice4" fill="url(#side)" rx="5" />
+        <rect class="dice-rect" id="dice5" fill="url(#side)" rx="5" />
+
+        <defs>
+            <pattern id="side1" viewBox="0,0,50,50" width="100%" height="100%">
+                <rect fill="#F2F2F2" width="50" height="50" />
+                <circle cx="25" cy="25" r="5" />
+            </pattern>
+        </defs>
+
+        <defs>
+            <pattern id="side2" viewBox="0,0,50,50" width="100%" height="100%">
+                <rect fill="#F2F2F2" width="50" height="50" />
+                <circle cx="39" cy="11" r="5" />
+                <circle cx="11" cy="39" r="5" />
+            </pattern>
+        </defs>
+
+        <defs>
+            <pattern id="side3" viewBox="0,0,50,50" width="100%" height="100%">
+                <rect fill="#F2F2F2" width="50" height="50" />
+                <circle cx="39" cy="11" r="5" />
+                <circle cx="25" cy="25" r="5" />
+                <circle cx="11" cy="39" r="5" />
+            </pattern>
+        </defs>
+
+        <defs>
+            <pattern id="side4" viewBox="0,0,50,50" width="100%" height="100%">
+                <rect fill="#F2F2F2" width="50" height="50" />
+                <circle cx="39" cy="39" r="5" />
+                <circle cx="39" cy="11" r="5" />
+                <circle cx="11" cy="39" r="5" />
+                <circle cx="11" cy="11" r="5" />
+            </pattern>
+        </defs>
+
+        <defs>
+            <pattern id="side5" viewBox="0,0,50,50" width="100%" height="100%">
+                <rect fill="#F2F2F2" width="50" height="50" />
+                <circle cx="39" cy="39" r="5" />
+                <circle cx="39" cy="11" r="5" />
+                <circle cx="25" cy="25" r="5" />
+                <circle cx="11" cy="39" r="5" />
+                <circle cx="11" cy="11" r="5" />
+            </pattern>
+        </defs>
+
+        <defs>
+            <pattern id="side6" viewBox="0,0,50,50" width="100%" height="100%">
+                <rect fill="#F2F2F2" width="50" height="50" />
+                <circle cx="39" cy="39" r="5" />
+                <circle cx="39" cy="25" r="5" />
+                <circle cx="39" cy="11" r="5" />
+                <circle cx="11" cy="39" r="5" />
+                <circle cx="11" cy="25" r="5" />
+                <circle cx="11" cy="11" r="5" />
+            </pattern>
+        </defs>
+
+    </svg>
+
+    <h1>Combinatoria</h1>
+
+    <script>
+        window.onload = () => {
+            playTL(true);
+        };
+        const mediaMatcher = (x) => {
+            if(x.matches) {
+                var mySVG = document.getElementById('dice-container');
+                mySVG.setAttribute("viewBox", "0 0 525 200");
+            } else {
+                var mySVG = document.getElementById('dice-container');
+                mySVG.setAttribute("viewBox", "0 0 700 200");
+            }
+        }
+        let isMobile = window.matchMedia("screen and (max-width: 450px)");
+        mediaMatcher(isMobile);
+        isMobile.addListener(mediaMatcher)
+    </script>
 </body>
+
 </html>

@@ -1,0 +1,101 @@
+:root {
+	--base-color: #121526;
+    --dice-width: 100px;
+    --dice-height: 100px;
+    --dice-border-radius: 5px;
+    --dice-gap: 50px;
+    --dice-y: 50px;
+}
+
+#dice-container {
+	width: 450px;
+	margin: 0;
+}
+
+circle {
+	fill: var(--base-color);
+}
+
+#dice1,
+#dice2,
+#dice3,
+#dice4,
+#dice5 {
+	opacity: 0;
+}
+
+@keyframes fadein {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.dice-rect {
+    width: var(--dice-width);
+    height: var(--dice-height);
+}
+
+#dice1 {
+    x: 0;
+    y: var(--dice-y);
+}
+
+#dice2 {
+    x: calc((var(--dice-width) + var(--dice-gap)));
+    y: var(--dice-y);
+}
+
+#dice3 {
+    x: calc((var(--dice-width) + var(--dice-gap)) * 2);
+    y: var(--dice-y);
+}
+
+#dice4 {
+    x: calc((var(--dice-width) + var(--dice-gap)) * 3);
+    y: var(--dice-y);
+}
+
+#dice5 {
+    x: calc((var(--dice-width) + var(--dice-gap)) * 4);
+    y: var(--dice-y);
+}
+
+@media screen and (max-width: 450px) {
+    #dice-container {
+        max-width: 337.5px;
+        width: 100%;
+    }
+    .dice-rect {
+        width: calc(var(--dice-width) * 0.75);
+        height: calc(var(--dice-height) * 0.75);
+    }
+    
+    #dice1 {
+        x: 0;
+        y: var(--dice-y);
+    }
+    
+    #dice2 {
+        x: calc((var(--dice-width) * 0.75 + var(--dice-gap) * 0.75));
+        y: var(--dice-y);
+    }
+    
+    #dice3 {
+        x: calc((var(--dice-width) * 0.75 + var(--dice-gap) * 0.75) * 2);
+        y: var(--dice-y);
+    }
+    
+    #dice4 {
+        x: calc((var(--dice-width) * 0.75 + var(--dice-gap) * 0.75) * 3);
+        y: var(--dice-y);
+    }
+    
+    #dice5 {
+        x: calc((var(--dice-width) * 0.75 + var(--dice-gap) * 0.75) * 4);
+        y: var(--dice-y);
+    }
+}
