@@ -7,17 +7,44 @@ body, html {
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: #121526;
+    background-color: rgb(10, 10, 10);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 24pt;
     color: #fff;
     font-weight: bolder;
     user-select: none;
     margin: 0;
     padding: 0;
+}
+
+#to-graph {
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: rgb(10, 10, 10);
+    font-weight: bolder;
+    box-shadow: 0 0 16px 0 rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    transition: box-shadow 0.2s;
+}
+
+#to-graph:hover {
+    transition: box-shadow 0.2s;
+    box-shadow: 0 0 32px 0 rgba(255, 255, 255, 0.5) !important;
 }
