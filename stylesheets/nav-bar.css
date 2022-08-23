@@ -1,5 +1,5 @@
 #top-nav-bar {
-    background-color: #fff;
+    background-color: #607EAA;
 
     height: 60px;
     width: 100%;
@@ -9,7 +9,7 @@
     left: 0;
     z-index: 100;
     
-    border-bottom: 1px solid #d6d6d6;
+    border-bottom: 3px solid #1C3879;
     padding: 0 16px;
     box-sizing: border-box;
 
@@ -37,7 +37,7 @@
 
 .nav-bar-item-title {
     font-size: 16px;
-    color: #000;
+    color: #fff;
     font-weight: bolder;
     user-select: none;
     height: 100%;
@@ -47,38 +47,40 @@
     cursor: pointer;
     align-items: center;
     justify-content: center;
+    transition: 0.25s;
 }
 
 .nav-bar-item-title:hover {
-    background-color: #f2f2f2;
+    transition: 0.25s;
+    background-color: rgba(28, 56, 121, 0.25);
 }
 
 .nav-bar-item-option-list {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: calc(100% + 1px);
+    top: calc(100% + 3px);
     left: 0;
     background-color: #fff;
     box-sizing: border-box;
-    z-index: 100;
+    z-index: 0;
     width: 100%;
     margin: 0;
     list-style: none;
-    border: 1px solid transparent;
-    border-radius: 0;
+    border-radius: 4px;
     padding: 0;
-    height: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
     overflow: hidden;
+    transition: all 0.25s;
+
+    opacity: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
 .menu-visible {
-    border: 1px solid #d6d6d6;
-    border-radius: 4px;
-    padding: 8px;
-    height: auto;
-    overflow: auto;
-    z-index: 1000;
+    transition: all 0.25s;
+    opacity: 1;
 }
 
 .item-option-list-item {
@@ -89,8 +91,37 @@
     padding: 8px;
     box-sizing: border-box;
     cursor: pointer;
+    user-select: none;
 }
 
 .item-option-list-item:hover {
     background-color: #f2f2f2;
+}
+
+#top-nav-bar-mobile {
+    background-color: #607EAA;
+
+    height: 60px;
+    width: 100%;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    
+    border-bottom: 3px solid #1C3879;
+    padding: 0 16px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Hide top navbar when is on mobile */
+@media screen and (max-width: 1090px) {
+    #top-nav-bar {
+        display: none;
+    }
 }

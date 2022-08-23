@@ -15,11 +15,20 @@
 
     <link rel="stylesheet" href="stylesheets/graph.css">
     <link rel="stylesheet" href="stylesheets/nav-bar.css">
+    <link rel="stylesheet" href="stylesheets/hamburger-icon.css">
 
     <script src="scripts/setupMenu.js" defer></script>
     <script src="scripts/setupWindow.js" defer></script>
 </head>
 <body>
+    <nav id="top-nav-bar-mobile">
+        <div class="hamburger" id="hamburger-1">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+    </nav>
+      
     <nav id="top-nav-bar">
         <div class="top-nav-bar-item" id="nav-item-0">
             <h1 class="nav-bar-item-title" id="nav-title-0">Archivo</h1>
@@ -71,5 +80,15 @@
     </nav>
     <section id="content"></section>
     <footer id="bottom-footer"></footer>
+
+    <script>
+            let hamburger = document.querySelectorAll(".hamburger");
+
+            hamburger.forEach((hamburger) => {
+                hamburger.addEventListener("click", () => {
+                    hamburger.classList.toggle("is-active");
+                });
+            });
+    </script>
 </body>
 </html>
