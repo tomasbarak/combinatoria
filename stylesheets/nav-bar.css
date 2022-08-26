@@ -38,7 +38,7 @@
 .nav-bar-item-title {
     font-size: 16px;
     color: #fff;
-    font-weight: bolder;
+    font-weight: 500;
     user-select: none;
     height: 100%;
     width: 100%;
@@ -120,9 +120,66 @@
     justify-content: flex-end;
 }
 
+#desplegable-menu {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    display: flex;
+    z-index: 50;
+    background-color: #fff;
+}
+
+.desplegable-menu-visible {
+    transition: all 0.25s;
+    max-width: 35%;
+}
+
+.desplegable-menu-invisible {
+    transition: all 0.25s;
+    min-width: none;
+    max-width: 0%;
+}
+#dimmer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 49;
+}
+
+.dimmer-visible {
+    transition: all 0.25s;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dimmer-invisible {
+    transition: all 0.25s;
+    background-color: rgba(0, 0, 0, 0);
+}
 /* Hide top navbar when is on mobile */
 @media screen and (max-width: 1090px) {
     #top-nav-bar {
         display: none;
+    }
+}
+
+@media screen and (max-width: 496px) {
+    .desplegable-menu-visible {
+        transition: all 0.25s;
+        max-width: 75%;
+    }
+}
+
+/* Show top navbar when is on desktop */
+@media screen and (min-width: 1090px) {
+    #dimmer {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    #desplegable-menu {
+        max-width: 0%;
     }
 }

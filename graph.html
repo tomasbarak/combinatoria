@@ -31,11 +31,15 @@
             <span class="line"></span>
         </div>
     </nav>
-      
+
+    <div id="desplegable-menu" class="desplegable-menu-invisible">
+
+    </div>
+    <span id="dimmer" class="dimmer-invisible"></span>
     <nav id="top-nav-bar">
         <div class="top-nav-bar-item" id="nav-item-0">
             <h1 class="nav-bar-item-title" id="nav-title-0">Archivo</h1>
-            <ul class="nav-bar-item-option-list invisible" id="nav-item-list-0">
+            <ul class="nav-bar-item-option-list" id="nav-item-list-0">
                 <li class="item-option-list-item">Nuevo</li>
                 <li class="item-option-list-item">Abrir</li>
                 <li class="item-option-list-item">Guardar</li>
@@ -72,7 +76,7 @@
             <h1 class="nav-bar-item-title" id="nav-title-4">Mostrar objetos</h1>
             <ul class="nav-bar-item-option-list" id="nav-item-list-4">
                 <li class="item-option-list-item">Letras</li>
-                <li class="item-option-list-item">Numeros</li>
+                <li class="item-option-list-item">Números</li>
                 <li class="item-option-list-item">Figuras</li>
                 <li class="item-option-list-item">No mostrar</li>
             </ul>
@@ -86,10 +90,16 @@
 
     <script>
             let hamburger = document.querySelectorAll(".hamburger");
+            let dimmer = document.querySelector("#dimmer");
+            let desplegableMenu = document.querySelector("#desplegable-menu");
 
             hamburger.forEach((hamburger) => {
                 hamburger.addEventListener("click", () => {
                     hamburger.classList.toggle("is-active");
+                    dimmer.classList.toggle("dimmer-visible");
+                    dimmer.classList.toggle("dimmer-invisible");
+                    desplegableMenu.classList.toggle("desplegable-menu-visible");
+                    desplegableMenu.classList.toggle("desplegable-menu-invisible");
                 });
             });
     </script>
