@@ -20,13 +20,23 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script type="text/javascript" id="MathJax-script" async src="scripts/tex-mml-chtml.js"></script>
     <script src="scripts/setupMenu.js" defer></script>
     <script src="scripts/setupWindow.js" defer></script>
-
+    <script src="scripts/latex_formulas.js"></script>
 </head>
 
 <body>
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+          },
+          svg: {
+            fontCache: 'global'
+          }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script"></script>
     <nav id="top-nav-bar-mobile">
         
         <div class="hamburger" id="hamburger-1">
@@ -162,8 +172,7 @@
         </div>
     </nav>
     <section id="content">
-        <p>
-            $$n! = n(n-1)(n-2)\cdots 3\cdot2\cdot1$$
+        <p id="latex-formula">
         </p>
     </section>
     <footer id="bottom-footer"></footer>
@@ -189,6 +198,19 @@
         dimmer.addEventListener("click", () => {
             hamburger[0].click();
         });
+
+        let latexFormulaP = document.querySelector("#latex-formula");
+        let i = 0;
+        setInterval(() => {
+            latexFormulaP.innerHTML = `$$${Formulas.permutaciones[i]}$$`;
+            MathJax.typeset();
+            if(i > Formulas.permutaciones.length - 2){
+                i = 0;
+            } else {
+                i++;
+            }
+        }, 1000);
+
     </script>
     <script type="module">
         import * as $C from 'https://cdn.jsdelivr.net/npm/js-combinatorics@2.1.1/combinatorics.min.js';
