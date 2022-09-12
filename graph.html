@@ -17,28 +17,32 @@
     <link rel="stylesheet" href="stylesheets/graph.css">
     <link rel="stylesheet" href="stylesheets/nav-bar.css">
     <link rel="stylesheet" href="stylesheets/hamburger-icon.css">
+    <link rel="stylesheet" href="stylesheets/page-selector.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <script src="scripts/latex_formulas.js"></script>
+    <script src="scripts/references.js"></script>
+
     <script src="scripts/setupMenu.js" defer></script>
     <script src="scripts/setupWindow.js" defer></script>
-    <script src="scripts/latex_formulas.js"></script>
+    <script src="scripts/setupPageSelector.js" defer></script>
 </head>
 
 <body>
     <script>
         MathJax = {
-          tex: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']]
-          },
-          svg: {
-            fontCache: 'global'
-          }
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
         };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script"></script>
     <nav id="top-nav-bar-mobile">
-        
+
         <div class="hamburger" id="hamburger-1">
             <span class="line"></span>
             <span class="line"></span>
@@ -49,7 +53,11 @@
     <div id="desplegable-menu" class="desplegable-menu-invisible">
         <div class="desplegable-menu-item-desplegable">
             <div class="desplegable-menu-item-row-wrapper">
-                <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path></svg>
+                <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18">
+                    <path fill-rule="evenodd"
+                        d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z">
+                    </path>
+                </svg>
                 <a class="desplegable-menu-item-title">Archivo</a>
             </div>
             <div class="desplegable-menu-item-submenu">
@@ -68,7 +76,11 @@
 
         <div class="desplegable-menu-item-desplegable">
             <div class="desplegable-menu-item-row-wrapper">
-                <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path></svg>
+                <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18">
+                    <path fill-rule="evenodd"
+                        d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z">
+                    </path>
+                </svg>
                 <a class="desplegable-menu-item-title">Permutaciones</a>
             </div>
             <div class="desplegable-menu-item-submenu">
@@ -82,7 +94,11 @@
 
         <div class="desplegable-menu-item-desplegable">
             <div class="desplegable-menu-item-row-wrapper">
-                <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path></svg>
+                <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18">
+                    <path fill-rule="evenodd"
+                        d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z">
+                    </path>
+                </svg>
                 <a class="desplegable-menu-item-title">Variaciones</a>
             </div>
             <div class="desplegable-menu-item-submenu">
@@ -95,7 +111,11 @@
 
         <div class="desplegable-menu-item-desplegable">
             <div class="desplegable-menu-item-row-wrapper">
-                <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path></svg>
+                <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18">
+                    <path fill-rule="evenodd"
+                        d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z">
+                    </path>
+                </svg>
                 <a class="desplegable-menu-item-title">Combinaciones</a>
             </div>
             <div class="desplegable-menu-item-submenu">
@@ -108,7 +128,11 @@
 
         <div class="desplegable-menu-item-desplegable">
             <div class="desplegable-menu-item-row-wrapper">
-                <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path></svg>
+                <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18">
+                    <path fill-rule="evenodd"
+                        d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z">
+                    </path>
+                </svg>
                 <a class="desplegable-menu-item-title">Mostrar Objetos</a>
             </div>
             <div class="desplegable-menu-item-submenu">
@@ -118,6 +142,20 @@
                     <li class="item-option-list-item">Figuras</li>
                     <li class="item-option-list-item">No mostrar</li>
                 </ul>
+            </div>
+        </div>
+
+        <div class="desplegable-menu-item-desplegable">
+            <div class="desplegable-menu-item-row-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18">
+                    <path
+                        d="M15.5 2.25a.75.75 0 01.75-.75h5.5a.75.75 0 01.75.75v5.5a.75.75 0 01-1.5 0V4.06l-6.22 6.22a.75.75 0 11-1.06-1.06L19.94 3h-3.69a.75.75 0 01-.75-.75z">
+                    </path>
+                    <path
+                        d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 010 1.5h-8.5a.25.25 0 00-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 00.25-.25v-8.5a.75.75 0 011.5 0v8.5a1.75 1.75 0 01-1.75 1.75H4.25a1.75 1.75 0 01-1.75-1.75V4.25z">
+                    </path>
+                </svg>
+                <a href="/ayuda.pdf" target="_blank" class="desplegable-menu-item-title">Ayuda</a>
             </div>
         </div>
     </div>
@@ -171,11 +209,39 @@
             <h1 class="nav-bar-item-title" id="nav-title-5">Ayuda</h1>
         </div>
     </nav>
-    <section id="content">
-        <p id="latex-formula">
-        </p>
-    </section>
+    
+    <div class="page-selector-container">
+        <div class="page-selector">
+            <a class="selector-item selector-item-selected">Referencia</a>
+            <a class="selector-item">Datos</a>
+            <a class="selector-item">Visualizador</a>
+        </div>
+        <div class="page-content">
+            <page class="page-referencia page-visible">
+                <div id="reference-container">
+                    <p id="reference">
+                        Denominamos permutación sin repetición a cada una de las formas enque podemos ordenar un conjunto de 
+                        <font style="font-family: MJXZERO, MJXTEX-I; font-size: 20px; font-weight: bolder;">n</font> 
+                        elementos distintos, siendo <font style="font-family: MJXZERO, MJXTEX-I; font-size: 20px; font-weight: bolder;">n</font> 
+                        un número natural cualquiera.
+                    </p>
+                    <p id="latex-formula"></p>
+                </div>
+            </page>
+
+            <page class="page-datos">
+            </page>
+
+            <page class="page-visualizador">
+            </page>
+        </div>
+    </div>
     <footer id="bottom-footer"></footer>
+
+    <script type="module">
+        import * as $C from 'https://cdn.jsdelivr.net/npm/js-combinatorics@2.1.1/combinatorics.min.js';
+        window.Combinatorics = $C;
+    </script>
 
     <script>
         let hamburger = document.querySelectorAll(".hamburger");
@@ -185,7 +251,7 @@
         hamburger.forEach((hamburger) => {
             hamburger.addEventListener("click", () => {
                 hamburger.classList.toggle("is-active");
-                if(isDimmerVisible){
+                if (isDimmerVisible) {
                     $("#dimmer").fadeOut(200);
                 } else {
                     $("#dimmer").fadeIn(200);
@@ -199,23 +265,19 @@
             hamburger[0].click();
         });
 
-        let latexFormulaP = document.querySelector("#latex-formula");
-        let i = 0;
-        setInterval(() => {
-            latexFormulaP.innerHTML = `$$${Formulas.permutaciones[i]}$$`;
-            MathJax.typeset();
-            if(i > Formulas.permutaciones.length - 2){
-                i = 0;
-            } else {
-                i++;
+        let latexFormula = document.querySelector("#latex-formula");
+        
+        changeMathJaxElementFormula(latexFormula, "n!");
+
+        function changeMathJaxElementFormula(element, formula) {
+            if(element && formula) {
+                element.innerHTML = `$$${formula}$$`;
+                MathJax.typeset();
             }
-        }, 1000);
+        }
 
     </script>
-    <script type="module">
-        import * as $C from 'https://cdn.jsdelivr.net/npm/js-combinatorics@2.1.1/combinatorics.min.js';
-        window.Combinatorics = $C;
-    </script>
+    
 
 </body>
 
