@@ -25,18 +25,20 @@ desplegable_menu_items.forEach((item) => {
     const item_title = row_wrapper.children[1];
 
     parent_element.addEventListener("click", () => {
-        if(item_chevron.classList.contains("rotated")){
-            item_chevron.classList.remove("rotated");
-            item_submenu.classList.remove("desplegable-submenu-visible");
-            parent_element.classList.remove("desplegable-menu-item-desplegable-opened");
-            parent_element.classList.add("desplegable-menu-item-desplegable-closed");
-            console.log("closed");
-        } else {
-            item_submenu.classList.add("desplegable-submenu-visible");
-            item_chevron.classList.add("rotated");
-            parent_element.classList.add("desplegable-menu-item-desplegable-opened");
-            parent_element.classList.remove("desplegable-menu-item-desplegable-closed");
-            console.log("opened");
+        if(item_submenu) {
+            if(item_chevron.classList.contains("rotated")){
+                item_chevron.classList.remove("rotated");
+                item_submenu.classList.remove("desplegable-submenu-visible");
+                parent_element.classList.remove("desplegable-menu-item-desplegable-opened");
+                parent_element.classList.add("desplegable-menu-item-desplegable-closed");
+                console.log("closed");
+            } else {
+                item_submenu.classList.add("desplegable-submenu-visible");
+                item_chevron.classList.add("rotated");
+                parent_element.classList.add("desplegable-menu-item-desplegable-opened");
+                parent_element.classList.remove("desplegable-menu-item-desplegable-closed");
+                console.log("opened");
+            }
         }
     })
 })
