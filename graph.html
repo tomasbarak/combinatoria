@@ -26,7 +26,6 @@
 
     <script src="scripts/setupMenu.js" defer></script>
     <script src="scripts/setupWindow.js" defer></script>
-    <script src="scripts/setupPageSelector.js" defer></script>
 </head>
 
 <body>
@@ -146,7 +145,8 @@
         </div> -->
 
         <div class="desplegable-menu-item-desplegable">
-            <div class="desplegable-menu-item-row-wrapper" onclick="window.open(`https://drive.google.com/file/d/1XVQYGPQ35MRkbyE7ZYKQoQjyHxPDXt8y/view?usp=sharing`, '_blank').focus()">
+            <div class="desplegable-menu-item-row-wrapper"
+                onclick="window.open(`https://drive.google.com/file/d/1XVQYGPQ35MRkbyE7ZYKQoQjyHxPDXt8y/view?usp=sharing`, '_blank').focus()">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18">
                     <path
                         d="M15.5 2.25a.75.75 0 01.75-.75h5.5a.75.75 0 01.75.75v5.5a.75.75 0 01-1.5 0V4.06l-6.22 6.22a.75.75 0 11-1.06-1.06L19.94 3h-3.69a.75.75 0 01-.75-.75z">
@@ -209,32 +209,64 @@
             <h1 class="nav-bar-item-title" id="nav-title-4">Ayuda</h1>
         </div>
     </nav>
-    
+
     <div class="page-selector-container">
-        <div class="page-selector">
+        <div class="page-selector ">
             <a class="selector-item selector-item-selected">Referencia</a>
             <a class="selector-item">Datos y Cálculos</a>
             <a class="selector-item">Visualizador</a>
         </div>
         <div class="page-content">
             <page class="page-referencia page-visible">
-                <div id="reference-container">
-                    <p id="reference">
-                        Denominamos permutación sin repetición a cada una de las formas enque podemos ordenar un conjunto de 
-                        <font style="font-family: MJXZERO, MJXTEX-I; font-size: 20px; font-weight: bolder;">n</font> 
-                        elementos distintos, siendo <font style="font-family: MJXZERO, MJXTEX-I; font-size: 20px; font-weight: bolder;">n</font> 
-                        un número natural cualquiera.
-                    </p>
-                    <p id="latex-formula"></p>
-                </div>
+
             </page>
 
-            <page class="page-datos">
+            <page class="page-datos-y-calculos">
             </page>
 
             <page class="page-visualizador">
             </page>
         </div>
+    </div>
+
+    <div id="select-combination-type" style="display: none;">
+        <h1>Seleccione el tipo de método de conteo a utilizar</h1>
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" viewBox="0 0 575.65833 577.34774">
+            
+            <path class="sv" d="M834.3331,568.1169H261.67083V161.32613H834.3331Z" fill="#fff" transform="translate(-261.67083 -161.32613)"></path>
+
+            <path d="M308.319,328.40241a5.57978,5.57978,0,0,0,0,11.15956H501.70843a5.57979,5.57979,0,0,0,0-11.15956Z" transform="translate(-261.67083 -161.32613)" fill="#607eaa"></path>
+          
+            <path d="M308.319,361.88106a5.57979,5.57979,0,1,0-.02353,11.15956H501.85128a5.57978,5.57978,0,1,0,0-11.15956Z" transform="translate(-261.67083 -161.32613)" fill="#607eaa"></path>
+           
+            <path d="M308.319,394.88106a5.57979,5.57979,0,1,0-.02353,11.15956h43.55577a5.57978,5.57978,0,1,0,0-11.15956Z" transform="translate(-261.67083 -161.32613)" fill="#607eaa"></path>
+           
+            <path d="M834.3331,568.1169H261.67083V161.32613H834.3331Zm-563.24864-9.41363h553.835V170.73976h-553.835Z" transform="translate(-261.67083 -161.32613)" fill="#e5e5e5"></path>
+           
+            <path d="M654.14325,478.73228a10.03692,10.03692,0,0,0-.04234,20.07379h95.83757a10.0369,10.0369,0,1,0,0-20.07379Z" transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
+            
+            <path d="M654.14325,357.18463a10.03692,10.03692,0,0,0-.04234,20.07379h95.83757a10.0369,10.0369,0,1,0,0-20.07379Z" transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
+           
+            <path d="M308.319,483.38106a5.57979,5.57979,0,1,0-.02353,11.15956H501.85128a5.57978,5.57978,0,1,0,0-11.15956Z" transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
+            
+            <path d="M308.319,516.38106a5.57979,5.57979,0,1,0-.02353,11.15956h43.55577a5.57978,5.57978,0,1,0,0-11.15956Z" transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
+            
+            <path d="M308.319,449.90241a5.57978,5.57978,0,0,0,0,11.15956H501.70843a5.57979,5.57979,0,0,0,0-11.15956Z" transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
+            
+            <path d="M308.319,206.90241a5.57978,5.57978,0,0,0,0,11.15956H501.70843a5.57979,5.57979,0,0,0,0-11.15956Z" transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
+            
+            <path d="M308.319,240.38106a5.57979,5.57979,0,1,0-.02353,11.15956H501.85128a5.57978,5.57978,0,1,0,0-11.15956Z" transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
+            
+            <path d="M308.319,273.38106a5.57979,5.57979,0,1,0-.02353,11.15956h43.55577a5.57978,5.57978,0,1,0,0-11.15956Z" transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
+            
+            <path  d="M654.14325,235.73228a10.03692,10.03692,0,0,0-.04234,20.07379h95.83757a10.0369,10.0369,0,1,0,0-20.07379Z" transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
+            
+            <circle class="svg-circle-1" cx="380" cy="84.34774" r="18" fill="#cacaca"></circle>
+            
+            <circle class="svg-circle-3" cx="380" cy="327.34774" r="18" fill="#cacaca"></circle>
+            
+            <circle class="svg-circle-2" cx="380" cy="205.89537" r="18" fill="#607eaa"></circle>
+        </svg>
     </div>
     <footer id="bottom-footer"></footer>
 
@@ -242,8 +274,18 @@
         import * as $C from 'https://cdn.jsdelivr.net/npm/js-combinatorics@2.1.1/combinatorics.min.js';
         window.Combinatorics = $C;
     </script>
+    <script src="scripts/setupPageSelector.js"></script>
 
     <script>
+        let combination_type = sessionStorage.getItem('combination_type');
+        if (combination_type !== null && combination_type !== undefined && combination_type !== '') {
+            setReferencePage(combination_type);
+        } else {
+            const page_selector = document.querySelector('.page-selector-container');
+            const select_combination_type = document.querySelector('#select-combination-type');
+            page_selector.style.display = 'none';
+            select_combination_type.style.display = 'flex';
+        }
         let hamburger = document.querySelectorAll(".hamburger");
         let dimmer = document.querySelector("#dimmer");
         let desplegableMenu = document.querySelector("#desplegable-menu");
@@ -266,18 +308,16 @@
         });
 
         let latexFormula = document.querySelector("#latex-formula");
-        
-        changeMathJaxElementFormula(latexFormula, "n!");
 
         function changeMathJaxElementFormula(element, formula) {
-            if(element && formula) {
+            if (element && formula) {
                 element.innerHTML = `$$${formula}$$`;
                 MathJax.typeset();
             }
         }
 
     </script>
-    
+
 
 </body>
 

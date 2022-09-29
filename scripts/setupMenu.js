@@ -5,14 +5,24 @@ menu_items.forEach((item) => {
     const parent_element = item;
     const item_title = parent_element.children[0];
     const item_submenu = parent_element.children[1];
-    const item_submenu_items = item_submenu ? item_submenu.children : null;
-
+    const item_submenu_items = item_submenu ? item_submenu.children : [];
     parent_element.addEventListener("click", () => {
         if (check_if_submenu_is_visible(item_submenu)) {
             show_single_submenu(null);
         } else {
             show_single_submenu(item_submenu);
         }
+    })
+    Array.prototype.slice.call(item_submenu_items).forEach((submenu_item) => {
+        console.log(submenu_item);
+        submenu_item.addEventListener("click", () => {
+            const menu_name = String(item_title.innerText).normalize('NFD').replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/\s/g, '_');
+            const submenu_name = String(submenu_item.innerText).normalize('NFD').replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/\s/g, '_');
+            const combination_type = menu_name + '_' + submenu_name;
+            console.log(combination_type);
+            console.log("submenu item clicked");
+            setReferencePage(combination_type);
+        })
     })
 })
 
