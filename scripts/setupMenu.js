@@ -13,6 +13,7 @@ menu_items.forEach((item) => {
             show_single_submenu(item_submenu);
         }
     })
+
     Array.prototype.slice.call(item_submenu_items).forEach((submenu_item) => {
         console.log(submenu_item);
         submenu_item.addEventListener("click", () => {
@@ -22,6 +23,7 @@ menu_items.forEach((item) => {
             console.log(combination_type);
             console.log("submenu item clicked");
             setReferencePage(combination_type);
+            changeDataAndCalcPage(combination_type);
         })
     })
 })
@@ -30,7 +32,7 @@ desplegable_menu_items.forEach((item) => {
     const parent_element = item;
     const row_wrapper = parent_element.children[0];
     const item_submenu = parent_element.children[1];
-
+    const item_submenu_items = item_submenu ? item_submenu.children[0].children : [];
     const item_chevron = row_wrapper.children[0];
     const item_title = row_wrapper.children[1];
 
@@ -50,7 +52,20 @@ desplegable_menu_items.forEach((item) => {
                 console.log("opened");
             }
         }
-    })
+    });
+
+    Array.prototype.slice.call(item_submenu_items).forEach((submenu_item) => {
+        console.log(submenu_item);
+        submenu_item.addEventListener("click", () => {
+            const menu_name = String(item_title.innerText).normalize('NFD').replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/\s/g, '_');
+            const submenu_name = String(submenu_item.innerText).normalize('NFD').replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/\s/g, '_');
+            const combination_type = menu_name + '_' + submenu_name;
+            console.log(combination_type);
+            console.log("submenu item clicked");
+            setReferencePage(combination_type);
+            changeDataAndCalcPage(combination_type);
+        })
+    });
 })
 
 

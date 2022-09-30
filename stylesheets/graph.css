@@ -38,6 +38,8 @@ body, html {
 #select-combination-type > h1 {
     margin-top: 20px;
     margin-bottom: 40px;
+    width: 100%;
+    text-align: center;
 }
 
 .svg-circle-1 {
@@ -62,3 +64,8 @@ body, html {
         transform: translateX(120px);
     }
 }
+.MathJax {
+    font-size: 16pt !important;
+    display: flex !important;
+}
+    
