@@ -3,7 +3,8 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-body, html {
+body,
+html {
     height: 100%;
     width: 100%;
     margin: 0;
@@ -22,6 +23,7 @@ body, html {
 .page-selector {
     margin-top: 60px;
 }
+
 #select-combination-type {
     display: flex;
     flex-direction: column;
@@ -35,11 +37,38 @@ body, html {
     top: 60px;
 }
 
-#select-combination-type > h1 {
+#select-combination-type>h1 {
     margin-top: 20px;
     margin-bottom: 40px;
     width: 100%;
     text-align: center;
+}
+
+#data-result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+
+#data-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    min-width: 100px;
+    max-width: 100%;
+    height: 75px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    border: 1px solid #607EAA;
+    padding: 8px;
+    overflow-x: hidden;
 }
 
 .svg-circle-1 {
@@ -56,16 +85,72 @@ body, html {
     animation-delay: 0.25s;
 }
 
+visualizer {
+    border-collapse: collapse;
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+}
+
+visualizer-row {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    width: 100%;
+    min-height: 50px;
+}
+
+visualizer-element {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+visualizer-title {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    font-size: 24px;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-visualizador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+
+    overflow-y: scroll;
+}
+
+tr {
+    width: 100%;
+    text-align: center;
+    height: 50px;
+}
+
 @keyframes move_circle {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(120px);
     }
 }
+
 .MathJax {
     font-size: 16pt !important;
     display: flex !important;
 }
-    

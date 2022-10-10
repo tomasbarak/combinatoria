@@ -37,15 +37,23 @@ const referencePages = {
 
 const dataAndCalcPages = {
     'permutaciones_sin_repeticion': [   `<div id="data-title-container">
-                                            <h2 id="data-title">Ingrese los datos necesarios para:</h2>
+                                            <h2 id="data-title">Datos</h2>
                                             <p id="data-calc-latex-formula"></p>
-                                            <h2 id="data-title2">Datos</h2>
                                         </div>
                                         <div id="data-container">
                                             <div class="data-input-container">
                                                 <label for="data-input-n"><font style="font-family: MJXZERO, MJXTEX-I; font-size: 20px; font-weight: bolder;">n</font>:</label>
-                                                <input class="data-input" onkeypress="return isNumberKey(event)" type="number" id="data-input-n" name="data-input" min="0" max="100" value="0" required>    
+                                                <input class="data-input" onpaste="return isNaturalNumber(event.clipboardData.getData('text'))" onkeypress="return isNumberKey(event)" type="number" id="data-input-n" name="data-input" min="0" max="100" value="0" required>    
                                             </div>
+                                            <div class="calc-btn-container">
+                                                <a class="calc-btn" onclick="calculators['psr']()">Calcular</a>
+                                            </div>
+                                            <h2 id="data-result-title">Resultado</h2>
+                                            <div id="data-result-container">
+                                                <h3 id="data-result"></h3>
+                                            </div>
+                                            <h2 >Ejemplo</h2>
+                                            <h3 id="data-example"></h3>
                                         </div>`, 'P_n=n!']
 }
 
@@ -69,10 +77,69 @@ function changeDataAndCalcPage(combination_type) {
         changeMathJaxElementFormula(document.querySelector("#data-calc-latex-formula"), dataAndCalcPages[combination_type][1]);
     }
 }
+
 function isNumberKey(evt){
     var charCode = (evt.which) ? evt.which : evt.keyCode
-    console.log();
-    if (charCode > 31 && (charCode < 48 || charCode > 57) || (Number(evt.target.value) > 10))
-        return false;
-    return true;
+    return isNaturalNumber(String.fromCharCode(charCode));
+}
+
+function isNaturalNumber(n) {
+    n = n.toString();
+    var n1 = Math.abs(n),
+        n2 = parseInt(n, 10);
+    return !isNaN(n1) && n2 === n1 && n1.toString() === n;
+}
+
+
+let calculators = {
+    'psr': () => {
+        let n = document.querySelector("#data-input-n").value;
+        let result = window.Combinatorics.permutation(n, n);
+        let result_array = [];
+        for(let i = 1; i <= n; i++) {
+            result_array.push(i.toString());
+        }
+        let example = new window.Combinatorics.Permutation(result_array, n);
+        console.log(example.length, example.sample(), result_array);
+        document.querySelector("#data-result").innerHTML = `${result}`;
+        document.querySelector("#data-example").innerHTML = `${example.sample().join(", ")}`;
+        visualizators['psr']();
+    },
+    'pcr': () => {
+
+    }
+}
+
+let visualizators = {
+    'psr': () => {
+        let n = document.querySelector("#data-input-n").value;
+        let page_visualizador = document.querySelector('.page-visualizador');
+        let visualizer_title = page_visualizador.querySelector('visualizer-title');
+
+
+        //Generate array of characters from a to z
+        let characters = [];
+        for(let i = 0; i < n; i++) {
+            characters.push(String.fromCharCode(65 + i));
+        }
+
+
+        //Generate permutations
+        let permutations = new window.Combinatorics.Permutation(characters, n);
+        let permutations_array = permutations.toArray();
+
+        //Generate permutations table
+        let permutations_table = document.querySelector("#visualizador-table");
+        permutations_table.innerHTML = "";
+        visualizer_title.innerHTML = "Conjunto: [" + characters.join(", ") + "]";
+        for(let i = 0; i < permutations_array.length; i++) {
+            let permutations_table_row = document.createElement("visualizer-row");
+            for(let j = 0; j < n; j++) {
+                let permutations_table_cell = document.createElement("visualizer-element");
+                permutations_table_cell.innerHTML = permutations_array[i][j];
+                permutations_table_row.appendChild(permutations_table_cell);
+            }
+            permutations_table.appendChild(permutations_table_row);
+        }
+    }
 }

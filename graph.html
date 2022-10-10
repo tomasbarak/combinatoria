@@ -26,7 +26,7 @@
     <script src="scripts/submenuFunctions/submenuActions.js"></script>
     <script src="scripts/combinationSwitch.js"></script>
 
-    <script src="scripts/setupMenu.js" defer></script>
+    <script src="scripts/setupMenu.js" ></script>
     <script src="scripts/setupWindow.js" defer></script>
 </head>
 
@@ -224,54 +224,85 @@
             </page>
 
             <page class="page-datos-y-calculos">
-                
+
             </page>
 
             <page class="page-visualizador">
+                <visualizer-title>Conjunto: []</visualizer-title>
+                <visualizer id="visualizador-table"></visualizer>
             </page>
         </div>
     </div>
 
     <div id="select-combination-type" style="display: none;">
         <h1>Seleccione el tipo de método de conteo a utilizar</h1>
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" viewBox="0 0 575.65833 577.34774">
-            
-            <path class="sv" d="M834.3331,568.1169H261.67083V161.32613H834.3331Z" fill="#fff" transform="translate(-261.67083 -161.32613)"></path>
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="100%" viewBox="0 0 575.65833 577.34774">
 
-            <path d="M308.319,328.40241a5.57978,5.57978,0,0,0,0,11.15956H501.70843a5.57979,5.57979,0,0,0,0-11.15956Z" transform="translate(-261.67083 -161.32613)" fill="#607eaa"></path>
-          
-            <path d="M308.319,361.88106a5.57979,5.57979,0,1,0-.02353,11.15956H501.85128a5.57978,5.57978,0,1,0,0-11.15956Z" transform="translate(-261.67083 -161.32613)" fill="#607eaa"></path>
-           
-            <path d="M308.319,394.88106a5.57979,5.57979,0,1,0-.02353,11.15956h43.55577a5.57978,5.57978,0,1,0,0-11.15956Z" transform="translate(-261.67083 -161.32613)" fill="#607eaa"></path>
-           
-            <path d="M834.3331,568.1169H261.67083V161.32613H834.3331Zm-563.24864-9.41363h553.835V170.73976h-553.835Z" transform="translate(-261.67083 -161.32613)" fill="#e5e5e5"></path>
-           
-            <path d="M654.14325,478.73228a10.03692,10.03692,0,0,0-.04234,20.07379h95.83757a10.0369,10.0369,0,1,0,0-20.07379Z" transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
-            
-            <path d="M654.14325,357.18463a10.03692,10.03692,0,0,0-.04234,20.07379h95.83757a10.0369,10.0369,0,1,0,0-20.07379Z" transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
-           
-            <path d="M308.319,483.38106a5.57979,5.57979,0,1,0-.02353,11.15956H501.85128a5.57978,5.57978,0,1,0,0-11.15956Z" transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
-            
-            <path d="M308.319,516.38106a5.57979,5.57979,0,1,0-.02353,11.15956h43.55577a5.57978,5.57978,0,1,0,0-11.15956Z" transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
-            
-            <path d="M308.319,449.90241a5.57978,5.57978,0,0,0,0,11.15956H501.70843a5.57979,5.57979,0,0,0,0-11.15956Z" transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
-            
-            <path d="M308.319,206.90241a5.57978,5.57978,0,0,0,0,11.15956H501.70843a5.57979,5.57979,0,0,0,0-11.15956Z" transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
-            
-            <path d="M308.319,240.38106a5.57979,5.57979,0,1,0-.02353,11.15956H501.85128a5.57978,5.57978,0,1,0,0-11.15956Z" transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
-            
-            <path d="M308.319,273.38106a5.57979,5.57979,0,1,0-.02353,11.15956h43.55577a5.57978,5.57978,0,1,0,0-11.15956Z" transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
-            
-            <path  d="M654.14325,235.73228a10.03692,10.03692,0,0,0-.04234,20.07379h95.83757a10.0369,10.0369,0,1,0,0-20.07379Z" transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
-            
+            <path class="sv" d="M834.3331,568.1169H261.67083V161.32613H834.3331Z" fill="#fff"
+                transform="translate(-261.67083 -161.32613)"></path>
+
+            <path d="M308.319,328.40241a5.57978,5.57978,0,0,0,0,11.15956H501.70843a5.57979,5.57979,0,0,0,0-11.15956Z"
+                transform="translate(-261.67083 -161.32613)" fill="#607eaa"></path>
+
+            <path
+                d="M308.319,361.88106a5.57979,5.57979,0,1,0-.02353,11.15956H501.85128a5.57978,5.57978,0,1,0,0-11.15956Z"
+                transform="translate(-261.67083 -161.32613)" fill="#607eaa"></path>
+
+            <path
+                d="M308.319,394.88106a5.57979,5.57979,0,1,0-.02353,11.15956h43.55577a5.57978,5.57978,0,1,0,0-11.15956Z"
+                transform="translate(-261.67083 -161.32613)" fill="#607eaa"></path>
+
+            <path d="M834.3331,568.1169H261.67083V161.32613H834.3331Zm-563.24864-9.41363h553.835V170.73976h-553.835Z"
+                transform="translate(-261.67083 -161.32613)" fill="#e5e5e5"></path>
+
+            <path
+                d="M654.14325,478.73228a10.03692,10.03692,0,0,0-.04234,20.07379h95.83757a10.0369,10.0369,0,1,0,0-20.07379Z"
+                transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
+
+            <path
+                d="M654.14325,357.18463a10.03692,10.03692,0,0,0-.04234,20.07379h95.83757a10.0369,10.0369,0,1,0,0-20.07379Z"
+                transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
+
+            <path
+                d="M308.319,483.38106a5.57979,5.57979,0,1,0-.02353,11.15956H501.85128a5.57978,5.57978,0,1,0,0-11.15956Z"
+                transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
+
+            <path
+                d="M308.319,516.38106a5.57979,5.57979,0,1,0-.02353,11.15956h43.55577a5.57978,5.57978,0,1,0,0-11.15956Z"
+                transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
+
+            <path d="M308.319,449.90241a5.57978,5.57978,0,0,0,0,11.15956H501.70843a5.57979,5.57979,0,0,0,0-11.15956Z"
+                transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
+
+            <path d="M308.319,206.90241a5.57978,5.57978,0,0,0,0,11.15956H501.70843a5.57979,5.57979,0,0,0,0-11.15956Z"
+                transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
+
+            <path
+                d="M308.319,240.38106a5.57979,5.57979,0,1,0-.02353,11.15956H501.85128a5.57978,5.57978,0,1,0,0-11.15956Z"
+                transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
+
+            <path
+                d="M308.319,273.38106a5.57979,5.57979,0,1,0-.02353,11.15956h43.55577a5.57978,5.57978,0,1,0,0-11.15956Z"
+                transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
+
+            <path
+                d="M654.14325,235.73228a10.03692,10.03692,0,0,0-.04234,20.07379h95.83757a10.0369,10.0369,0,1,0,0-20.07379Z"
+                transform="translate(-261.67083 -161.32613)" fill="#e4e4e4"></path>
+
             <circle class="svg-circle-1" cx="380" cy="84.34774" r="18" fill="#cacaca"></circle>
-            
+
             <circle class="svg-circle-3" cx="380" cy="327.34774" r="18" fill="#cacaca"></circle>
-            
+
             <circle class="svg-circle-2" cx="380" cy="205.89537" r="18" fill="#607eaa"></circle>
         </svg>
     </div>
     <footer id="bottom-footer"></footer>
+    <script>
+        setup_menu();
+        setup_desplegable_menu();
+        setup_hamburger();
+    </script>
 
     <script type="module">
         import * as $C from 'https://cdn.jsdelivr.net/npm/js-combinatorics@2.1.1/combinatorics.min.js';
@@ -281,37 +312,8 @@
 
     <script>
         let combination_type = sessionStorage.getItem('combination_type');
-        if (combination_type !== null && combination_type !== undefined && combination_type !== '') {
-            setReferencePage(combination_type);
-        } else {
-            const page_selector = document.querySelector('.page-selector-container');
-            const select_combination_type = document.querySelector('#select-combination-type');
-            page_selector.style.display = 'none';
-            select_combination_type.style.display = 'flex';
-        }
-        let hamburger = document.querySelectorAll(".hamburger");
-        let dimmer = document.querySelector("#dimmer");
-        let desplegableMenu = document.querySelector("#desplegable-menu");
-        let isDimmerVisible = false;
-        hamburger.forEach((hamburger) => {
-            hamburger.addEventListener("click", () => {
-                hamburger.classList.toggle("is-active");
-                if (isDimmerVisible) {
-                    $("#dimmer").fadeOut(200);
-                } else {
-                    $("#dimmer").fadeIn(200);
-                }
-                isDimmerVisible = !isDimmerVisible;
-                desplegableMenu.classList.toggle("desplegable-menu-visible");
-                desplegableMenu.classList.toggle("desplegable-menu-invisible");
-            });
-        });
-        dimmer.addEventListener("click", () => {
-            hamburger[0].click();
-        });
-
-        let latexFormula = document.querySelector("#latex-formula");
-
+        select_method(combination_type);
+        
         function changeMathJaxElementFormula(element, formula) {
             if (element && formula) {
                 element.innerHTML = `$$${formula}$$`;
